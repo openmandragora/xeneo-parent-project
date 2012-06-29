@@ -46,6 +46,17 @@
                 <role>Core Developer</role>
             </roles>
         </developer>
+        <developer>
+            <id>schipfi</id>
+            <name>Martin Schipflinger</name>
+            <email>martin.schipflinger@xeneo.org</email>
+            <timezone>+2</timezone>
+            <organization>XENEO</organization>
+            <organizationUrl>http://xeneo.org</organizationUrl>
+            <roles>               
+                <role>Core Developer</role>
+            </roles>
+        </developer>
     </developers>
     
     <organization>
@@ -79,7 +90,7 @@
         <site>
             <id>xeneo-ftp</id>
             <name>XENEO Documentation</name>
-            <url>ftp://hosting6.rasshofer.ltd.uk/documentation/${project.artifactId}</url>
+            <url>ftp://hosting6.rasshofer.ltd.uk/documentation/</url>
         </site>
     </distributionManagement>
     
@@ -143,7 +154,14 @@
                 </plugin>
                 <plugin>
                     <artifactId>maven-site-plugin</artifactId>
-                    <version>3.1</version>                    
+                    <version>3.1</version>    
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.apache.maven.wagon</groupId>
+                            <artifactId>wagon-ftp</artifactId>       
+                            <version>2.2</version>
+                        </dependency>
+                    </dependencies>
                 </plugin>
                 <plugin>
                     <groupId>net.flybyte.virgo</groupId>
